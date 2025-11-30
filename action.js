@@ -54,10 +54,10 @@ window.addEventListener('scroll', function () {
     }
 
     //Move fishes horizontally
-    fish1.style.transform = `translateX(${fishOffsets[0] + value * fishSpeeds[0]}px)`;
-    fish2.style.transform = `translateX(${fishOffsets[1] + value * fishSpeeds[1]}px)`;
-    fish3.style.transform = `translateX(${fishOffsets[2] + value * fishSpeeds[2]}px)`;
-    fish4.style.transform = `translateX(${fishOffsets[3] + value * fishSpeeds[3]}px)`;
+    fish1.style.transform = `scaleX(-1) translateX(${fishOffsets[0] + value * fishSpeeds[0]}px)`;
+    fish2.style.transform = `scaleX(-1) translateX(${fishOffsets[1] + value * fishSpeeds[1]}px)`;
+    fish3.style.transform = `scaleX(-1) translateX(${fishOffsets[2] + value * fishSpeeds[2]}px)`;
+    fish4.style.transform = `scaleX(-1) translateX(${fishOffsets[3] + value * fishSpeeds[3]}px)`;
 })
 
 
