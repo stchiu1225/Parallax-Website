@@ -2,9 +2,8 @@
 time = document.getElementsByClassName('bubbles')[0];
 
 // padding values for desktop
-var fish2move = 100;
-var fish3move = 900;
-var fish4move = 1200;
+const fishOffsets = [-150, -300, -450, -600];
+const fishSpeeds = [0.3, 0.22, 0.16, 0.1];
 
 if (screen.width < 400) {
 
@@ -13,9 +12,14 @@ if (screen.width < 400) {
     time.style.setProperty('--transform-y', '-700vh')
 
     // padding values for mobile
-    fish2move = 1680;
-    fish3move = 3000;
-    fish4move = 4300;
+    fishOffsets[0] = -120;
+    fishOffsets[1] = -240;
+    fishOffsets[2] = -360;
+    fishOffsets[3] = -480;
+    fishSpeeds[0] = 0.35;
+    fishSpeeds[1] = 0.26;
+    fishSpeeds[2] = 0.18;
+    fishSpeeds[3] = 0.12;
 }
 
 
@@ -50,10 +54,10 @@ window.addEventListener('scroll', function () {
     }
 
     //Move fishes horizontally
-    fish1.style.right = (value - 100) * 1 + 'px';
-    fish2.style.left = (value - fish2move) * 1 + 'px';
-    fish3.style.right = (value - fish3move) * 1 + 'px';
-    fish4.style.left = (value - fish4move) * 1 + 'px';
+    fish1.style.transform = `translateX(${fishOffsets[0] + value * fishSpeeds[0]}px)`;
+    fish2.style.transform = `translateX(${fishOffsets[1] + value * fishSpeeds[1]}px)`;
+    fish3.style.transform = `translateX(${fishOffsets[2] + value * fishSpeeds[2]}px)`;
+    fish4.style.transform = `translateX(${fishOffsets[3] + value * fishSpeeds[3]}px)`;
 })
 
 

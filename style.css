@@ -226,6 +226,7 @@ section #text {
 .fishes {
     position: absolute;
     opacity: 0.8;
+    left: 0;
 }
 
 /* Properties for each fish and sea bed*/
